@@ -24,18 +24,18 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     #Reference: Udacity course notes
-    
+
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.day_name()
     df['hour'] = df['Start Time'].dt.hour
-    
+
     if month != 'all':
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
         df = df [df['month']== month]
-        
+
     if day != 'all':
         df = df[df['day_of_week'] == day.title()]
 
@@ -50,9 +50,9 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). 
+    # get user input for city (chicago, new york city, washington).
     #HINT: Use a while loop to handle invalid inputs
-    
+
     #Reference: Udacity course notes
     while True:
         try:
@@ -61,7 +61,7 @@ def get_filters():
         except ValueError:
             print('Unfortunately that\'s not a valid city name!')
             pass
-        
+
     # get user input for month (all, january, february, ... , june)
     while True:
         try:
@@ -88,9 +88,9 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
+
     #Reference: Udacity course notes
-    
+
     # display the most common month
 
     popular_month = df['month'].mode()[0]
@@ -115,7 +115,7 @@ def station_stats(df):
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    
+
     #Reference: Udacity course notes
 
     # display most commonly used start station
@@ -129,7 +129,7 @@ def station_stats(df):
     # display most frequent combination of start station and end station trip
     most_frequent_startend_station = (df['Start Station'] + '-' + df['End Station']).mode()[0]
     print('most frequent combination of start station and end station trip:', most_frequent_startend_station)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -139,13 +139,13 @@ def trip_duration_stats(df):
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-    
+
     #Reference: Udacity course notes
 
     # display total travel time
     total_travel_time = df['Trip Duration'].sum()
     print('Total Travel Time: ',total_travel_time/60, 'mins')
-    
+
     # display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
     print('Mean Travel Time: ',mean_travel_time/60, 'mins')
@@ -159,7 +159,7 @@ def user_stats(df):
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
-    
+
     #Reference: Udacity course notes
 
     # Display counts of user types
@@ -170,41 +170,41 @@ def user_stats(df):
     if 'Gender' in df:
         counts_of_gender = df['Gender'].value_counts()
         print('count of gender: ',counts_of_gender)
-   
+
     else:
         print('There is no gender column in the data source')
 
     # Display earliest, most recent, and most common year of birth
-    
+
     if 'Birth Year' in df:
         print('The earliest year of birth is: ',df['Birth Year'].min())
         print('The most recent year of birth is: ',df['Birth Year'].max())
         print('The most common year of birth is: ',df['Birth Year'].mode()[0])
-        
+
     else:
         print('There is no birth year column in the data source')
-        
-    
+
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 #Reference: Udacity course notes
 def display_raw_data(df):
-    
+
     number_of_lines_count = 0
     while True:
-        
+
         answer = input('\nWould you like to see raw data? Enter yes or no.\n').lower()
         if answer != 'yes':
             break
         else:
-            
+
             print(df.iloc[number_of_lines_count:number_of_lines_count+5])
             number_of_lines_count += 5
 
-    
+
 def main():
-    
+
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
@@ -215,7 +215,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        restart = input('\nWould you like to restart? Please enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
@@ -231,7 +231,3 @@ if __name__ == "__main__":
 
 
 # In[ ]:
-
-
-
-
