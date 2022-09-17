@@ -3,3 +3,12 @@
 Project Date:
 
 September 2022.
+
+Project Purpose:
+
+This project is for Udacity Nanodegree Program (Programming for Data Science with Python)
+
+
+Files:
+
+BikeShare.py
