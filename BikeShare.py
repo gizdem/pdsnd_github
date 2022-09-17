@@ -194,7 +194,7 @@ def display_raw_data(df):
     number_of_lines_count = 0
     while True:
 
-        answer = input('\nWould you like to see raw data? Enter yes or no.\n').lower()
+        answer = input('\nWould you like to see raw data? Please enter yes or no.\n').lower()
         if answer != 'yes':
             break
         else:
