@@ -7,3 +7,14 @@ Project date: This project created in September 2022.
 type: docs
 
 Project purpose: This project is for Udacity Nanodegree Program (Programming for Data Science with Python)
+
+type: docs
+
+Files used in this project: BikeShare.py python file used in this project
+
+type: docs
+
+Credits for websites visited during the project study:
+
+https://stackoverflow.com/
+https://git-scm.com/
