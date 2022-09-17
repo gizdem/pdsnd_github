@@ -12,3 +12,10 @@ This project is for Udacity Nanodegree Program (Programming for Data Science wit
 Files:
 
 BikeShare.py
+
+
+Credits:
+
+https://stackoverflow.com/
+https://git-scm.com/
+https://github.com/
