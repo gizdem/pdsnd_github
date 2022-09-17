@@ -16,4 +16,5 @@ Include the files used
 
 ### Credits
 
-https://stackoverflow.com/ 
+https://stackoverflow.com/
+https://git-scm.com/
