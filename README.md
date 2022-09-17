@@ -3,3 +3,7 @@
 type: docs
 
 Project date: This project created in September 2022.
+
+type: docs
+
+Project purpose: This project is for Udacity Nanodegree Program (Programming for Data Science with Python)
