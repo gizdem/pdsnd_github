@@ -12,7 +12,8 @@ Replace the Project Title
 This project is for Udacity Nanodegree Program (Programming for Data Science with Python)
 
 ### Files used
-Include the files used
+
+BikeShare.py python file used in this project
 
 ### Credits
 
